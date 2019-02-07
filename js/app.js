@@ -245,6 +245,8 @@ $(document).ready(function(){
                       designHide();
                       $(window).scrollTop(designTop);
                   }
+                  $(readMeDesign).text('Read More');
+                  $(readMeDesignMobile).text('Read More');
             });
 
           $(readMeDesign).on('click', function(e){
@@ -302,6 +304,8 @@ $(document).ready(function(){
                      codeHide();
                      $(window).scrollTop(codeTop);
                   }
+                  $(readMeCode).text('Read More');
+                  $(readMeCodeMobile).text('Read More');
             });
 
 });
