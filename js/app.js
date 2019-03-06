@@ -1,4 +1,7 @@
 //--------------------Variables---------------//
+//--Logo-----//
+const logo = $('mainLogo');
+
 //--Nav Bar Variables-----//
 const navBar = $('.mainNav')[0];
 let navBarShow = function navBarShow() {
@@ -7,6 +10,16 @@ let navBarShow = function navBarShow() {
 
 let navBarHide = function navBarHide(){
   $(navBar).css('visibility', 'hidden');
+}
+
+let home = function home() {
+    return $('#top').offset().top;
+}
+let portfolio = function portfolio() {
+    return $('#portfolio').offset().top;
+}
+let contact = function contact() {
+    return $('#contact').offset().top;
 }
 
 navBarHide();
@@ -117,8 +130,9 @@ codeHide();
 
 
 
-//-------------Hide Nav Bar at top/ show Nav on Scroll---//
+//-------------Functions Triggered on Scroll------------//
 $(document).ready(function(){
+  //-----Call Hide and Show Functions---//
   designPanelEnd();
   designPanelStart();
   designPanelStartMobile();
@@ -129,17 +143,22 @@ $(document).ready(function(){
   codeBackPosition();
   backDesignShow();
   backCodeShow();
+  home();
+  contact();
+  portfolio();
+
 
     $(window).scroll(function(){
 
-            if ($(this).scrollTop() < 200) {
+            //-------------Hide/Show Nav & Social Icon Bar on Scroll---//
+            if ($(this).scrollTop() < 80) {
                 navBarHide();
                 iconBarHide();
              } else {
                     navBarShow();
                     iconBarShow();
                   }
-
+            //-------------Hide/Show Back to Design/Code Button Scroll---//
             if (designBackPosition() > designPanelEnd() || designBackPosition() < designPanelStart() || designBackPosition() < designPanelStartMobile() ) {
                 backDesignHide();
              } else {
@@ -152,9 +171,44 @@ $(document).ready(function(){
                    backCodeShow();
                  }
 
+           //-------------Active Navigation Links on Scroll--------//
+           //---Add CurrentLink Class to Home----//
+           if (($(this).scrollTop()+ 50) < portfolio()) {
+               $(".homeLink").addClass("currentLink");
+               $(".portfolioLink").removeClass("currentLink");
+               $(".contactLink").removeClass("currentLink");
+               console.log(home());
+           }
+           else {
+               $(".homeLink").removeClass("currentLink");
+           }
+           //---Add CurrentLink Class to Portfolio----//
+           if (($(this).scrollTop()+ 50) >= portfolio() && $(this).scrollTop() < contact()) {
+               $(".portfolioLink").addClass("currentLink");
+                $(".contactLink").removeClass("currentLink");
+               $(".homeLink").removeClass("currentLink");
+               console.log(portfolio());
+           }
+           else {
+               $(".portfolioLink").removeClass("currentLink");
+           }
+           //---Add CurrentLink Class to Contact----//
+           if (($(this).scrollTop()+ 50) >= contact()) {
+               $(".contactLink").addClass("currentLink");
+               $(".portfolioLink").removeClass("currentLink");
+               $(".homeLink").removeClass("currentLink");
+               console.log(contact());
+           }
+           else {
+               $(".contactLink").removeClass("currentLink");
+           }
+
       });
 
 });
+
+
+
 
 
 //---------------Slider----------//
@@ -208,7 +262,7 @@ $(document).ready(function(){
 
 });
 
-// Read More Button & closing section
+// Read More/Read Less Button & closing section
 $(document).ready(function(){
   //--Variables
     let designTop;
@@ -292,8 +346,8 @@ $(document).ready(function(){
                     $(this).text('Read Less');
                 }
                 else {
-                      designHide();
-                      $(window).scrollTop(designTop);
+                      codeHide();
+                      $(window).scrollTop(codeTop);
                       $(this).text('Read More');
                   }
             });

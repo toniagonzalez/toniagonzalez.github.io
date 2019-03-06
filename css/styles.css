@@ -29,13 +29,7 @@ a {
   color: white;
   height: 0;
 }
-a:hover {
-  color: #d98818;
-}
 
-a:active {
-  color: #d98818;
-}
 
 /*------------Grid Layout----------------*/
 .grid {
@@ -134,10 +128,13 @@ a.nav {
   transition: all .5s;
 }
 
-a.nav:hover {
-  color: #d98818;
-}
+.nav a:hover {
+  color: #d279a6; /*pink */
+ }
 
+.currentLink {
+  color: #d98818; /*orange*/
+}
 
 /*-----------Header------------*/
 
@@ -145,16 +142,15 @@ a.nav:hover {
 header {
   text-align: center;
   padding-top: 5px;
-  background-color: white;
+  background-image: url(../images/marble.jpg);
   background-size:cover;
   background-position: center;
   min-width:  100%;
-  height: auto;
-  padding-top: 3em;
+  height: 100vh;
 }
 
 .sub-header {
-  color:black;
+  color: black;
   font-size: 45px;
   font-variant-caps:all-petite-caps;
   margin: 0;
@@ -170,29 +166,31 @@ header {
 .view-button {
   padding: 5px 20px;
   border-radius: 10px;
-  color: #d98818;
-  background-color: white;
+  color: black;
+  background-color: rgba(255, 255, 255, .4);
   font-size: 1.5em;
   font-variant-caps:all-petite-caps;
 }
 
 .view-button:hover {
   color: white;
-  background-color: #d98818;
+  background-color: rgba(0, 0, 0, .8);
 }
 
 /*------------Header SVG Logo--------*/
 .mainLogo {
-  width: 70%;
+  width: 280px;
   height: auto;
   margin: auto 0;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .letter-g {
   fill: url(#background);
   stroke-width: 1;
   stroke: orange;
-  filter: url(#blur);
+  filter: url(#shadow);
 
 }
 
@@ -220,7 +218,8 @@ header {
 .name-svg {
   margin:0;
   width: 320px;
-  height: 60px;
+  height: auto;
+  margin-top: 10px;
 }
 
 .handwriting {
@@ -229,23 +228,24 @@ header {
   stroke-dasharray: 170;
   stroke-dashoffset: 170;
 
-  animation: write 2.8s linear forwards, fillScript .8s 2.8s forwards;
+  animation: write 3s linear forwards, fillScript .8s 3s forwards;
 }
 
 
 
-
-
 /*------------Portfolio--------*/
+header,
 .portfolio,
-.aboutMe {
+.aboutMe,
+.designProjects,
+.codeProjects {
     border: 2px solid rgba(0, 0, 0, 0.5);
     box-shadow: inset -7px -5px 5px rgba(0, 0, 0, 0.5);
 }
 
 .sticky {
   display: inline-block;
-  margin: 30px 20px 40px 20px;
+  margin: 30px 20px 10px 20px;
 }
 
 .sticky img {
@@ -263,7 +263,7 @@ header {
 .sticky p {
   font-size: 2em;
   font-variant-caps:all-petite-caps;
-  color: #d98818;
+  color: black;
   background-color: white;
   border-radius: 10px;
   padding: 4px 8px 8px 8px;
@@ -271,18 +271,20 @@ header {
 
 .sticky p:hover {
   color: white;
-  background-color:#d98818;
+  background-color: rgba(0, 0, 0, .8);
 }
 /*------------designWork & codeWork--------*/
 
 #designProjects.heading,
 #codeProjects.heading {
-  color: #d98818;
+  color: rgba(0, 0, 0, .8);
 }
 
 .designProjects,
 .codeProjects {
   display: inline-block;
+  background-image: url(../images/marble.jpg);
+  background-color: white;
 }
 
 .project {
@@ -359,7 +361,7 @@ button span {
 }
 
 button {
-  color: #d98818;
+  color: black;
   font-size: 1.2em;
   border-style: none;
   border-radius: 5px;
@@ -368,7 +370,7 @@ button {
 }
 button:hover{
   color: white;
-  background-color: #d98818;
+  background-color: rgba(0, 0, 0, .4);
   cursor: pointer;
 }
 
@@ -577,11 +579,14 @@ a.social:hover {
 
 @media (min-width: 768px) {
 
-  .mainLogo {
-    width: 40%;
-    height: auto;
+  header {
+    height: 100vh;
   }
 
+  .sticky {
+    display: inline-block;
+    margin: 30px 20px 40px 20px;
+  }
 
   #mobileSliderDesignContainer,
   #mobileSliderCodeContainer {
@@ -647,13 +652,9 @@ a.social:hover {
 
 @media (min-width: 1024px) {
 
-  .mainLogo {
-    width: 30%;
-    height: auto;
-  }
-
   header {
     padding-top: 1em;
+    height: 100vh;
   }
 
   #mobileSliderDesignContainer,

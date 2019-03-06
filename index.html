@@ -2,8 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Tonia Gonzalez UI/Visual Designer</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Tonia Gonzalez UI/Front End Developer</title>
+      <link rel="icon" type="image/png" href="images/blackLogo.png" sizes="16x16">
       <link rel="stylesheet" href="css/normalize.css">
       <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Condensed|Ubuntu+Condensed" rel="stylesheet">
       <link rel="stylesheet" href="css/skippr.css">
@@ -24,21 +25,21 @@
         </g>
       </svg>
       <ul class="nav">
-          <li><a href="#top">Home</a></li>
-          <li><a href="#portfolio">Work</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#top" class="homeLink">Home</a></li>
+          <li><a href="#portfolio" class="portfolioLink">Portfolio</a></li>
+          <li><a href="#contact" class="contactLink">Contact</a></li>
       </ul>
     </nav>   <!-- End Nav Bar -->
 
     <header id="top">
       <!-- Logo SVG -->
       <div>
-        <svg  viewBox="0 0 200 200" class ="mainLogo">
+        <svg  viewBox="0 -10 200 200" class ="mainLogo">
           <defs>
             <clipPath id="_clipPath_OP6j50Ezan6HhtU8ARd5tl63c0EQBb1A">
             <rect width="200" height="200"/>
             <filter id="shadow">
-              <feDropShadow dx="4" dy="6" stdDeviation="4"/>
+              <feDropShadow dx="4" dy="-6" stdDeviation="4"/>
             </filter>
             <filter id="blur">
               <feGaussianBlur in="SourceGraphic" stdDeviation=".5" result="blur"/>
@@ -67,7 +68,7 @@
           <h1 class="sub-header"> UI / Front End Developer</h1>
           <p><a href="#portfolio" class="view-button">View Work</a></p>
         </div>  <!-- End Name Tag -->
-      </header>
+    </header>
 
       <!-- Portfolio Start -->
       <div class="portfolio" id="portfolio">
@@ -169,7 +170,7 @@
            <div class="card" >
            <img src="images/javascript.png">
            <p>Web App Dashboard</p>
-           <p>This is a responsive Web App Dashboard I constructed from a mockup and a few icons. The app was laid out with HTML, CSS Grid, CSS Variables and JavaScript-driven charts and graphs using Chart JS. I implemented SVG animation to scale the icons on hover. I also provided functionality and interactivity to the dashboard using JavaScript to create a message notification counter, an alert banner to display that displays on load, toggle button functionality, and use of local storage to save user preferences.</p>
+           <p>This is a responsive Web App Dashboard I constructed from a mockup and a few icons. My tools for this app were HTML, CSS Grid, CSS Variables and JavaScript-driven charts and graphs using Chart JS. I implemented SVG animation to scale the icons on hover. I also provided functionality and interactivity to the dashboard using JavaScript to create the following: a message notification counter, an alert banner that displays on load, toggle button functionality, and use of local storage to save user preferences.</p>
            <p><a href="https://toniagonzalez.github.io/WebAppDashboard/" target="_blank" class="siteLink">Go to Site</a></p>
          </div>
           <img src="images/webAppDashboard.png" alt="image of dashboard layout" title="Web App DashBoard Project">
@@ -178,7 +179,7 @@
          <div class="card" >
           <img src="images/javascript.png">
            <p>Searchable Photo Gallery</p>
-           <p>An interactive photo gallery crafted using jQuery. I created my own code for the a searchable gallery that allows the photos to hide and show depending on user input. Using jQuery and the  Lightbox 2 plugin a photo will display in a lightbox when the user clicks on a thumbnail image.</p>
+           <p>This interactive photo gallery was crafted using jQuery. I created my own code for the searchable gallery that allows the photos to hide and show on user input. Using jQuery and the Lightbox 2 plugin, a photo will display in a lightbox when the user clicks on a thumbnail image.</p>
            <p><a href="https://toniagonzalez.github.io/Searchable_Photo_Gallery/" target="_blank" class="siteLink">Go to Site</a></p>
        </div>
           <img src="images/searchablePhotoGallery.png" alt="image of gallery layout" title="Searchable Photo Gallery Project">
@@ -187,7 +188,7 @@
           <div class="card">
             <img src="images/htmlCSS.png">
             <p>Online Registration Form</p>
-            <p>I created a responsive, mobile-friendly registration form using a wide variety of HTML form input types and attributes. I built the form using a supplied mockup for reference. CSS transitions are used in input fields on hover.</p>
+            <p>I created a responsive, mobile-friendly registration form using a wide variety of HTML form input types and attributes. I built the form using a supplied mockup for reference. I also added interactivity using CSS transitions in the input fields on hover to enhance the User Interface.</p>
             <p><a href="https://toniagonzalez.github.io/Online_Registration_Form/" target="_blank" class="siteLink">Go to Site</a></p>
           </div>
             <img src="images/onlineRegistrationForm.png" alt="image of registration form layout" title="Online Registration Form Project">
@@ -208,8 +209,8 @@
     </div> <!-- End of codeProjects -->
 
     <!-- Contact Section -->
-      <div class="aboutMe">
-         <h2 id="contact" class="heading"> Contact</h2>
+      <div class="aboutMe" id="contact">
+         <h2 class="heading"> Contact</h2>
          <div>
              <img src="images/polaroidLarge.png" alt"image of a polaroid with photo developer" title="My Photo" class="polaroid">
          </div>
