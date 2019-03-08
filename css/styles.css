@@ -1,11 +1,11 @@
 
-
+/*------------Base Styles----------------*/
 body {
   margin:0 auto;
   padding: 0;
   text-align: center;
-  font-family: 'Ubuntu Condensed', sans-serif;
-  font-size: .9em;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: .8em;
   background: url(../images/bamboo.jpg);
   background-size:cover;
   background-attachment:fixed;
@@ -19,8 +19,8 @@ body {
     text-align: center;
     font-variant-caps: all-petite-caps;
     font-size: 60px;
-    padding: 70px 0 0 20px;
-    margin: 0;
+    padding: 70px 0 20px 0;
+    margin: 0 auto;
 }
 
 
@@ -30,6 +30,9 @@ a {
   height: 0;
 }
 
+h2 {
+  margin: 0;
+}
 
 /*------------Grid Layout----------------*/
 .grid {
@@ -90,21 +93,20 @@ footer {
 .mainNav {
   width: 100%;
   background: black;
-  height: 3em;
+  height: 3.2em;
   padding: 2.5px;
   position: fixed;
   text-align: right;
   z-index: 1000;
   display:flex;
-  justify-content:space-between;
+  justify-content:space-around;
 }
 
 .nav-logo {
   width: 40px;
   height: 40px;
   padding-left: 20px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  margin-bottom: 5px;
   fill: white;
   stroke:  none;
 }
@@ -120,8 +122,12 @@ footer {
 }
 
 .nav li {
-  padding: 10px 15px;
+  padding: 5px 15px;
   height:0;
+}
+
+.nav li:last-child {
+  padding-right: 45px;
 }
 
 a.nav {
@@ -416,7 +422,7 @@ img.slide {
   font-size: 1.2em;
 }
 
-/*----Preview Text--------*/
+/*----View Card Text--------*/
 
 .designProjects .background h4,
 .codeProjects .background h4 {
@@ -429,34 +435,48 @@ img.slide {
   transform: rotate(-44deg);
 }
 
-/*-----Button Styling--------*/
+/*-----Projects/ Skilss Link Styling--------*/
 
-button span {
-  display: none;
-}
 
-button {
+.codeProjects a,
+.designProjects a {
+  display: inline-block;
   color:  #0a0a29; /* dark blue */
   font-size: 1.2em;
+  height: 1.4em;
   border-style: none;
   border-radius: 5px;
   border: .5px solid #0a0a29; /* dark blue */
   background-color: white;
-  margin-top: 5px;
+  margin-top: 10px;
   padding: 6px 10px;
 }
-button:hover{
+.codeProjects a:hover,
+.designProjects a:hover{
   color:  #cc6600; /* drk orange */
   border-color:  #cc6600; /* drk orange */
   cursor: pointer;
 }
 
+/* button span {
+  display: none;
+} */
+
 .codeButton,
 .closeCode {
+  color: #0a0a29; /* dark blue */
   display: block;
   margin: 0 auto;
+  font-size: 1.2em;
+  padding: 8px 10px;
   margin-top: 100px;
+  border-radius: 5px;
   border: none
+}
+.codeButton:hover,
+.closeCode:hover {
+  color: white;
+  background-color: #0a0a29; /* dark blue */
 }
 
 
@@ -498,7 +518,7 @@ button:hover{
 
 .card {
   color: white;
-  font-size: 20px;
+  font-size: 19px;
   line-height: 1.5em;
   margin: 1.5em 0;
   text-align: center;
@@ -514,9 +534,11 @@ button:hover{
 
 .card ul {
   display: block;
+  overflow: visible;
+  word-wrap: break-word;
   list-style: none;
   font-variant-caps: all-petite-caps;
-  font-size: 25px;
+  font-size: 19px;
   padding: 0;
 }
 
@@ -638,7 +660,9 @@ a.social:hover {
 
 /*-------------Media Queries--------*/
 
+
 @media (orientation: landscape) {
+  /*-------Remove mainLogo for Lanscape on smaller screens--------*/
   .mainLogo {
     display: none;
   }
@@ -647,12 +671,24 @@ a.social:hover {
   }
  }
 
+ @media (min-width: 400px) {
+   /*-------Reset Nav Bar Spacing--------*/
+   .mainNav {
+     justify-content:space-between;
+   }
+   .nav li:last-child {
+     padding-right: 0;
+   }
+ }
+
  @media (orientation: landscape) and (min-width: 768px) {
+    /*-------Return Logo for Lanscape on larger screens--------*/
    .mainLogo {
      display: inline-block;
    }
 
   }
+
 @media (min-width: 768px) {
 
   header {

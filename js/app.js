@@ -1,6 +1,4 @@
 //--------------------Variables---------------//
-//--Logo-----//
-const logo = $('.mainLogo');
 
 //--Nav Bar Variables-----//
 const navBar = $('.mainNav')[0];
