@@ -5,7 +5,7 @@ body {
   padding: 0;
   text-align: center;
   font-family: 'Ubuntu Condensed', sans-serif;
-  font-size: 1em;
+  font-size: .9em;
   background: url(../images/bamboo.jpg);
   background-size:cover;
   background-attachment:fixed;
@@ -34,7 +34,7 @@ a {
 /*------------Grid Layout----------------*/
 .grid {
 display: grid;
-width: vw;
+width: 100%;
 grid-template-columns: 100%;
 grid-template-rows: auto;
 grid-row-gap: 20px;
@@ -42,8 +42,8 @@ grid-template-areas:
   'main-nav'
   'header'
   'portfolio'
-  'designProjects'
   'codeProjects'
+  'designProjects'
   'aboutMe'
   'footer';
 
@@ -177,13 +177,38 @@ header {
   background-color: rgba(0, 0, 0, .8);
 }
 
+/*------------Animating Header Logo--------*/
+
+/*------Keyframes--------*/
+@keyframes slidedown {
+  0% {
+  transform: translateY(-100%);
+  }
+  50%{
+  transform: translateY(8%);
+  }
+  65%{
+  transform: translateY(-4%);
+  }
+  80%{
+  transform: translateY(4%);
+  }
+  95%{
+  transform: translateY(-2%);
+  }
+  100% {
+  transform: translateY(0%);
+  }
+}
 /*------------Header SVG Logo--------*/
 .mainLogo {
   width: 280px;
   height: auto;
   margin: auto 0;
-  margin-top: 50px;
+  margin-top: 0px;
   margin-bottom: 50px;
+  transform: translate3d(0, 180px, 0);
+  animation: slidedown 2s forwards;
 }
 
 .letter-g {
@@ -273,7 +298,7 @@ header,
   color: white;
   background-color: rgba(0, 0, 0, .8);
 }
-/*------------designWork & codeWork--------*/
+/*------------designSkills & codeWork--------*/
 
 #designProjects.heading,
 #codeProjects.heading {
@@ -285,123 +310,160 @@ header,
   display: inline-block;
   background-image: url(../images/marble.jpg);
   background-color: white;
+  padding-bottom: 40px;
 }
 
-.project {
-  width: 100%;
-  height: auto;
+.designProjects {
+  padding-bottom: 90px;
 }
 
-.project-1 {
-  background-color: lightblue;
-}
-
-.project-2 {
-  background-color: yellow;
-}
-
-.project-3 {
-  background-color: tomato;
-}
-
-.project-1 img,
-.project-2 img,
-.project-3 img {
-  width: 80%;
-  height: auto;
-  margin-top: 20px;
-  margin-bottom: 50px;
+/*-----Skill/Project Containers--------*/
+.designSkill,
+.project,
+.codeProjects .textOverlay,
+.designProjects .textOverlay {
+  margin: 40px 15px 65px 0px;
+  position: relative;
   display: inline-block;
-}
-
-.project-1 .card,
-.project-2 .card,
-.project-3 .card {
-  width: 90%;
-  height: auto;
-  margin-top: 50px;
-  margin-bottom: 20px;
   vertical-align: top;
-  display: inline-block;
-
+  box-sizing: border-box;
 }
 
-.project-1 .card img,
-.project-2 .card img,
-.project-3 .card img {
+.designProjects .background,
+.codeProjects .background {
+  margin:  25px;
+  position: relative;
+  overflow: hidden;
+}
+
+.designSkill,
+.designProjects .background,
+.designProjects  img.slide,
+.designProjects .imageContainer,
+.designProjects .textOverlay  {
+  width: 300px;
+  height: 400px;
+}
+
+.project,
+.codeProjects .background,
+.codeProjects .background img,
+.codeProjects .imageContainer,
+.codeProjects .textOverlay {
+  width: 300px;
+  height: 500px;
+}
+
+.designProjects .background .imageContainer,
+.designProjects .background .imageContainer .textOverlay,
+.codeProjects .background  .imageContainer .textOverlay,
+.codeProjects .background .imageContainer {
+  margin-top: 0;
+}
+
+/*-----Card textOverlay Text--------*/
+.designProjects .textOverlay,
+.codeProjects .textOverlay,
+img.slide {
+  margin: 30px 15px;
+  opacity: 1;
+  transition: transform .9s ease-out;
+
+  position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+  color: white;
+  font-size: 1.0em;
+  line-height: 1.5em;
+  margin: 1.5em 0;
+  text-align: center;
+  border-radius: 5px 5px 90px 5px;
+  border: .5px solid white;
+  padding: 10px 15px;
+  background-color:  #0a0a29; /* dark blue */
+}
+
+
+img.slide {
+  margin-top: 0;
+  padding: 0;
+  background-color: white;
+}
+
+.textOverlay.clicked {
+  opacity: 0;
+}
+
+.designProjects .background,
+.codeProjects .background {
+  margin: 0;
+  border-radius: 5px;
+  background-color: #cc6600; /* drk orange */
+}
+
+
+.textOverlay img.icon {
   width: 90%;
   height: auto;
+  border: none;
 }
 
-.backDesign,
-.backCode {
-  display: block;
-  width: 150px;
-  position: fixed;
-  padding: 0;
-  list-style: none;
+
+.designProjects .skillHeader {
+  font-size: 1.2em;
+}
+
+/*----Preview Text--------*/
+
+.designProjects .background h4,
+.codeProjects .background h4 {
+  margin: 0;
   color: white;
-  background-color: black;
-  z-index: 1000;
-  visibility: hidden;
+  font-size: 12px;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  transform: rotate(-44deg);
 }
 
-.backDesign {
-  bottom: 10px;
-  left: 10px;
-}
-
-.backCode {
-  bottom: 8px;
-  left: 15px;
-}
+/*-----Button Styling--------*/
 
 button span {
   display: none;
 }
 
 button {
-  color: black;
+  color:  #0a0a29; /* dark blue */
   font-size: 1.2em;
   border-style: none;
   border-radius: 5px;
+  border: .5px solid #0a0a29; /* dark blue */
   background-color: white;
+  margin-top: 5px;
   padding: 6px 10px;
 }
 button:hover{
-  color: white;
-  background-color: rgba(0, 0, 0, .4);
+  color:  #cc6600; /* drk orange */
+  border-color:  #cc6600; /* drk orange */
   cursor: pointer;
 }
 
-.closeDesign,
+.codeButton,
 .closeCode {
-  margin: 20px 0;
+  display: block;
+  margin: 0 auto;
+  margin-top: 100px;
+  border: none
 }
+
 
 .siteLink {
   cursor: pointer;
 }
 
-/*------------Slider--------*/
-#mobileSliderDesignContainer,
-#mobileSliderCodeContainer {
-  width: 80%;
-  height: 400px;
-  display: inline-block;
-  margin-bottom: 100px;
-  margin-top: 20px;
-}
-
-#sliderDesignContainer,
-#sliderCodeContainer {
-  display: none;
-}
-
-.sliderDesign,
-.sliderCode {
-  margin-bottom: 50px;
-}
 
 /*------------About Me--------*/
 
@@ -456,12 +518,12 @@ button:hover{
   font-variant-caps: all-petite-caps;
   font-size: 25px;
   padding: 0;
+  padding-top: 30px;
 }
 
 .card li {
  text-align: center;
  margin-bottom: 5px;
-
 }
 
 .card.contact,
@@ -469,8 +531,8 @@ button:hover{
   width: 80%;
   margin-left: 5%;
   color: black;
-  background-color: white;
-  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, .8);
+  background-image: url(../images/marble.jpg);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, .8);
 }
 
 .card.contact {
@@ -479,15 +541,15 @@ button:hover{
 }
 
 .card.contact {
-    color: black;
+    color: gray;
 }
 
 .card.contact a {
-    color: orange;
+    color: black;
 }
 
 .card.contact a:hover {
-    color: gray;
+    color: #d279a6; /*pink */
 }
 
 .polaroid {
@@ -582,10 +644,25 @@ a.social:hover {
   header {
     height: 100vh;
   }
-
+  .mainLogo {
+    margin-top: 50px;
+  }
   .sticky {
     display: inline-block;
     margin: 30px 20px 40px 20px;
+  }
+
+  .designProjects .intro,
+  .codeProjects .into {
+    /* width: 45%;
+    height: auto; */
+    vertical-align: top;
+  }
+
+  .designProjects .intro img,
+  .codeProjects .into img {
+    width: 90%;
+    height: auto;
   }
 
   #mobileSliderDesignContainer,
@@ -625,7 +702,7 @@ a.social:hover {
     padding-left: 10px;
   }
 
-  .project-1 .card,
+  /* .project-1 .card,
   .project-2 .card,
   .project-3 .card {
     width: 40%;
@@ -634,8 +711,8 @@ a.social:hover {
     margin-bottom: 50px;
     vertical-align: top;
     display: inline-block;
-  }
-
+  } */
+/*
   .project-1 img,
   .project-2 img,
   .project-3 img {
@@ -644,7 +721,7 @@ a.social:hover {
     margin-top: 50px;
     margin-bottom: 50px;
     display: inline-block;
-  }
+  } */
 
 
 }
@@ -668,6 +745,18 @@ a.social:hover {
     height: 350px;
     display: inline-block;
     margin-bottom: 100px;
+  }
+  .designProjects .intro,
+  .codeProjects .into {
+    /* width: 40%;
+    height: auto; */
+    vertical-align: top;
+  }
+
+  .designProjects .intro img,
+  .codeProjects .into img {
+    width: 90%;
+    height: auto;
   }
 
   .project-1 .card,

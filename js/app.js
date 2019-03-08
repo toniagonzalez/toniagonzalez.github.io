@@ -1,6 +1,6 @@
 //--------------------Variables---------------//
 //--Logo-----//
-const logo = $('mainLogo');
+const logo = $('.mainLogo');
 
 //--Nav Bar Variables-----//
 const navBar = $('.mainNav')[0];
@@ -36,33 +36,10 @@ let iconBarHide = function iconBarHide(){
 
 iconBarHide();
 
-//-- Slider Variables-----//
-const sliderDesignMobile = $('.sliderDesign')[0];
-const sliderCodeMobile = $('.sliderCode')[0];
-const sliderDesign = $('.sliderDesign')[1];
-const sliderCode = $('.sliderCode')[1];
-
 //-- Read More / Read Less Variables-----//
-let designSection = $('.projectSection')[0];
-let codeSection = $('.projectSection')[1];
-let readMeDesignMobile = $('.designButton')[0];
-let readMeCodeMobile = $('.codeButton')[0];
-let backDesign = $('.closeDesign')[0];
-let backCode = $('.closeCode')[0];
-let closeDesign = $('.closeDesign')[1];
-let closeCode = $('.closeCode')[1];
-
-let readMeDesign = $('.designButton')[1];
-let readMeCode = $('.codeButton')[1];
-
-
-let designShow = function designShow() {
-  $(designSection).show();
-}
-
-let designHide = function designHide() {
-  $(designSection).hide();
-}
+let codeSection = $('.projectSection')[0];
+let closeCode = $('.closeCode')[0];
+let readMeCode = $('.codeButton')[0];
 
 let codeShow = function codeShow() {
   $(codeSection).show();
@@ -72,77 +49,33 @@ let codeHide = function codeHide() {
   $(codeSection).hide();
 }
 
-let backDesignShow = function backDesignShow() {
-  $(backDesign).css('visibility', 'visible');
-}
-
-let backDesignHide = function backDesignHide(){
-  $(backDesign).css('visibility', 'hidden');
-}
 
 //----Variables to Hide and Show Back Buttons
-let designPanelStartMobile = function designPanelStart() {
-    return $(readMeDesignMobile).offset().top;
-}
-let designPanelStart = function designPanelStart() {
-    return $(readMeDesign).offset().top;
-}
 
-let designPanelEnd = function designPanelEnd() {
-    return $(closeDesign).offset().top;
-}
-let designBackPosition = function designBackPosition() {
-    return $(backDesign).offset().top;
-}
-
-let codePanelStartMobile = function designPanelStart() {
-    return $(readMeCodeMobile).offset().top;
-}
-
-let codePanelStart = function designPanelStart() {
+let codePanelStart = function codePanelStart() {
     return $(readMeCode).offset().top;
 }
 
 let codePanelEnd = function codePanelEnd() {
     return $(closeCode).offset().top;
 }
-let codeBackPosition = function codeBackPosition() {
-    return $(backCode).offset().top;
-}
 
-
-let backCodeShow = function backCodeShow() {
-  $(backCode).css('visibility', 'visible');
-}
-
-let backCodeHide = function backCodeHide(){
-  $(backCode).css('visibility', 'hidden');
-}
-
-let arrowDownDesign = $('.designButton span');
-let arrowDownCode = $('.codeButton span');
-
-
-backDesignShow();
-backCodeShow();
-designHide();
 codeHide();
+
+//---Variables to View Image Under info Card----//
+let projects = $('.codeProjects');
+let project = $('.project');
+let skill = $('.designProjects');
+let viewButton = $('h4');
+let textOverlay = $('.textOverlay');
 
 
 
 //-------------Functions Triggered on Scroll------------//
 $(document).ready(function(){
   //-----Call Hide and Show Functions---//
-  designPanelEnd();
-  designPanelStart();
-  designPanelStartMobile();
-  designBackPosition();
-  codePanelStartMobile();
   codePanelStart();
   codePanelEnd();
-  codeBackPosition();
-  backDesignShow();
-  backCodeShow();
   home();
   contact();
   portfolio();
@@ -158,18 +91,6 @@ $(document).ready(function(){
                     navBarShow();
                     iconBarShow();
                   }
-            //-------------Hide/Show Back to Design/Code Button Scroll---//
-            if (designBackPosition() > designPanelEnd() || designBackPosition() < designPanelStart() || designBackPosition() < designPanelStartMobile() ) {
-                backDesignHide();
-             } else {
-                     backDesignShow();
-                  }
-
-            if (codeBackPosition() > codePanelEnd() || codeBackPosition() < codePanelStart() || codeBackPosition() < codePanelStartMobile()) {
-                backCodeHide();
-            } else {
-                   backCodeShow();
-                 }
 
            //-------------Active Navigation Links on Scroll--------//
            //---Add CurrentLink Class to Home----//
@@ -177,7 +98,7 @@ $(document).ready(function(){
                $(".homeLink").addClass("currentLink");
                $(".portfolioLink").removeClass("currentLink");
                $(".contactLink").removeClass("currentLink");
-               console.log(home());
+
            }
            else {
                $(".homeLink").removeClass("currentLink");
@@ -187,7 +108,6 @@ $(document).ready(function(){
                $(".portfolioLink").addClass("currentLink");
                 $(".contactLink").removeClass("currentLink");
                $(".homeLink").removeClass("currentLink");
-               console.log(portfolio());
            }
            else {
                $(".portfolioLink").removeClass("currentLink");
@@ -197,7 +117,6 @@ $(document).ready(function(){
                $(".contactLink").addClass("currentLink");
                $(".portfolioLink").removeClass("currentLink");
                $(".homeLink").removeClass("currentLink");
-               console.log(contact());
            }
            else {
                $(".contactLink").removeClass("currentLink");
@@ -209,157 +128,55 @@ $(document).ready(function(){
 
 
 
-
-
-//---------------Slider----------//
-
-$(document).ready(function(){
-
-  $(sliderDesignMobile).skippr({
-      transition: 'fade',
-      speed: 1000,
-      easing: 'linear',
-      navType: 'bubble',
-      childrenElemntType: 'div',
-      autoPlay: true,
-      autoPlayDuration: 4000,
-      arrows: false
-  });
-
-
-  $(sliderCodeMobile).skippr({
-      transition: 'fade',
-      speed: 1000,
-      easing: 'linear',
-      navType: 'bubble',
-      childrenElemntType: 'div',
-      autoPlay: true,
-      autoPlayDuration: 4000,
-      arrows: false
-  });
-
-  $(sliderDesign).skippr({
-      transition: 'fade',
-      speed: 1000,
-      easing: 'linear',
-      navType: 'bubble',
-      childrenElemntType: 'div',
-      autoPlay: true,
-      autoPlayDuration: 4000,
-      arrows: false
-  });
-
-  $(sliderCode).skippr({
-      transition: 'fade',
-      speed: 1000,
-      easing: 'linear',
-      navType: 'bubble',
-      childrenElemntType: 'div',
-      autoPlay: true,
-      autoPlayDuration: 4000,
-      arrows: false
-  });
-
-});
-
 // Read More/Read Less Button & closing section
 $(document).ready(function(){
   //--Variables
-    let designTop;
     let codeTop;
-
-          // $(window).scrollTop() > $(this).offset().top) ||
-          $(readMeDesignMobile).on('click', function(e){
-
-                  if ($(this).text() === 'Read More') {
-                      designTop = $(window).scrollTop();
-                      designShow();
-                      $(this).text('Read Less');
-                    }
-
-                  else {
-                        designHide();
-                        $(window).scrollTop(designTop);
-                        $(this).text('Read More');
-                    }
-
-            });
-
-          $(closeDesign).on('click', function(e){
-                  if (e.target) {
-                      designHide();
-                      $(window).scrollTop(designTop);
-                  }
-                  $(readMeDesign).text('Read More');
-                  $(readMeDesignMobile).text('Read More');
-            });
-
-          $(backDesign).on('click', function(e){
-                  if (e.target) {
-                      designHide();
-                      $(window).scrollTop(designTop);
-                  }
-                  $(readMeDesign).text('Read More');
-                  $(readMeDesignMobile).text('Read More');
-            });
-
-          $(readMeDesign).on('click', function(e){
-                  if ($(this).text() === 'Read More') {
-                      designTop = $(window).scrollTop();
-                      designShow();
-                      $(this).text('Read Less');
-                  }
-                  else {
-                        designHide();
-                        $(window).scrollTop(designTop);
-                        $(this).text('Read More');
-                    }
-            });
-
-
-            $(readMeCodeMobile).on('click', function(e){
-                    if ($(this).text() === 'Read More') {
-                        codeTop = $(window).scrollTop();
-                        codeShow();
-                        $(this).text('Read Less');
-                    }
-                    else {
-                          codeHide();
-                          $(window).scrollTop(designTop);
-                          $(this).text('Read More');
-                      }
-            });
 
             $(closeCode).on('click', function(e){
                       if (e.target) {
                          codeHide();
                          $(window).scrollTop(codeTop);
                       }
-                      $(readMeCode).text('Read More');
-                      $(readMeCodeMobile).text('Read More');
+                      $(readMeCode).text('View More');
             });
 
             $(readMeCode).on('click', function(e){
-                if ($(this).text() === 'Read More') {
+                if ($(this).text() === 'View More') {
                     codeTop = $(window).scrollTop();
                     codeShow();
-                    $(this).text('Read Less');
+                    $(this).text('View Less');
                 }
                 else {
                       codeHide();
                       $(window).scrollTop(codeTop);
-                      $(this).text('Read More');
+                      $(this).text('View More');
                   }
             });
 
+});
 
-            $(backCode).on('click', function(e){
-                  if (e.target) {
-                     codeHide();
-                     $(window).scrollTop(codeTop);
-                  }
-                  $(readMeCode).text('Read More');
-                  $(readMeCodeMobile).text('Read More');
-            });
+//--- View Image Under info Card on View click----//
+$(document).ready(function(){
+         skill = $('.designProjects');
+         viewButton = $('h4');
+
+         viewButton.on('click', function(e) {
+           let button = e.target;
+           let imageContainer = button.nextSibling.nextSibling;
+           let textOverlay = imageContainer.children[1];
+
+           textOverlay.classList.toggle('clicked');
+
+           if ($(e.target).text() === 'View') {
+                $(textOverlay).addClass("clicked");
+                $(e.target).text('Hide');
+              }
+              else {
+                $(textOverlay).removeClass("clicked");
+                $(e.target).text('View');
+              }
+
+         });
 
 });
