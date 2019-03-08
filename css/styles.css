@@ -537,8 +537,9 @@ img.slide {
   overflow: visible;
   word-wrap: break-word;
   list-style: none;
+  margin-top: 1.7em;
   font-variant-caps: all-petite-caps;
-  font-size: 19px;
+  font-size: 1.2em;
   padding: 0;
 }
 
