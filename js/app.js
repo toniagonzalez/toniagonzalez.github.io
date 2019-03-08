@@ -62,13 +62,6 @@ let codePanelEnd = function codePanelEnd() {
 
 codeHide();
 
-//---Variables to View Image Under info Card----//
-let projects = $('.codeProjects');
-let project = $('.project');
-let skill = $('.designProjects');
-let viewButton = $('h4');
-let textOverlay = $('.textOverlay');
-
 
 
 //-------------Functions Triggered on Scroll------------//
@@ -158,25 +151,20 @@ $(document).ready(function(){
 
 //--- View Image Under info Card on View click----//
 $(document).ready(function(){
-         skill = $('.designProjects');
-         viewButton = $('h4');
 
-         viewButton.on('click', function(e) {
-           let button = e.target;
-           let imageContainer = button.nextSibling.nextSibling;
-           let textOverlay = imageContainer.children[1];
+          //--- Listener Placed on Project and Design Cards----//
+          $('.project, .designSkill').on('click', function(){
 
-           textOverlay.classList.toggle('clicked');
+              //--- Select Text Overlay on Card and Toggle Opacity----//
+              this.querySelector('.textOverlay').classList.toggle('clicked');
 
-           if ($(e.target).text() === 'View') {
-                $(textOverlay).addClass("clicked");
-                $(e.target).text('Hide');
+                //--- Toggle View & Hide Text----//
+              if (this.querySelector('h4').innerText === 'View') {
+                    this.querySelector('h4').innerText = 'Hide';
               }
               else {
-                $(textOverlay).removeClass("clicked");
-                $(e.target).text('View');
+                  this.querySelector('h4').innerText = 'View';
               }
-
-         });
+          });
 
 });
