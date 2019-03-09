@@ -634,18 +634,18 @@ a.social {
 }
 
 a.twitter {
-  background-image: url(../images/Twitter_black.png);
+  background-image: url(../images/Twitter_black.svg);
   background-repeat:no-repeat;
 
 }
 
 a.linkedin {
-  background-image: url(../images/linkedin.png);
+  background-image: url(../images/linkedin.svg);
   background-repeat:no-repeat;
 }
 
 a.github {
-  background-image: url(../images/github.png);
+  background-image: url(../images/github.svg);
   background-repeat:no-repeat;
 }
 
