@@ -4,7 +4,7 @@ body {
   margin:0 auto;
   padding: 0;
   text-align: center;
-  font-family: 'Ubuntu Condensed', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: .9em;
   background: url(../images/bamboo.jpg);
   background-size:cover;
@@ -382,15 +382,15 @@ img.slide {
 	bottom: 0;
 	left: 0;
 
-  color: white;
-  font-size: 1.0em;
+  color: #0a0a29; /* dark blue */
+  font-size: 1.2em;
   line-height: 1.5em;
   margin: 1.5em 0;
   text-align: center;
   border-radius: 5px 5px 5px 90px;
-  border: .5px solid white;
+  border: .5px solid #0a0a29; /* dark blue */
   padding: 10px 15px;
-  background-color:  #0a0a29; /* dark blue */
+  background-color: white;
 }
 
 
@@ -422,6 +422,13 @@ img.slide {
 .designProjects .skillHeader,
 .codeProjects .skillHeader {
   font-size: 1.2em;
+  width: 90%;
+  height: 80px;
+  border: 10px double white;
+  padding-top: 30px;
+  color:  white;
+  background-color: #0a0a29; /* dark blue */
+
 }
 
 /*----View Card Text--------*/
@@ -448,14 +455,15 @@ img.slide {
   height: 1.4em;
   border-style: none;
   border-radius: 5px;
-  border: .5px solid #0a0a29; /* dark blue */
   background-color: white;
+  border: .5px solid #0a0a29; /* dark blue */
   margin-top: 10px;
   padding: 6px 10px;
 }
 .codeProjects a:hover,
 .designProjects a:hover{
-  color:  #cc6600; /* drk orange */
+  color:  white;
+  background-color:  #cc6600; /* drk orange */
   border-color:  #cc6600; /* drk orange */
   cursor: pointer;
 }
@@ -537,8 +545,7 @@ img.slide {
   word-wrap: break-word;
   list-style: none;
   margin-top: 1.7em;
-  font-variant-caps: all-petite-caps;
-  font-size: 1.2em;
+  font-size: 1em;
   padding: 0;
 }
 
@@ -757,7 +764,9 @@ a.social:hover {
     width: 90%;
     height: auto;
   }
-
+  .card.contact{
+    min-width: 360px;
+  }
   .aboutMe {
     display: grid;
     grid-template-columns: 33% 1fr 1fr;
