@@ -446,11 +446,11 @@ img.slide {
 .codeProjects .background h4 {
   margin: 0;
   color: white;
-  font-size: 12px;
+  font-size: 25px;
   position: absolute;
-  bottom: 7px;
-  left: 7px;
-  transform: rotate(44deg);
+  bottom: 4px;
+  left: 5px;
+  transform: rotate(-44deg);
 }
 
 /*-----Projects/ Skills Link Styling--------*/
@@ -522,7 +522,7 @@ img.slide {
   padding-top: 10px;
   color: white;
   background-color: #0a0a29; /* dark blue */
-}
+} 
 
 
 /*------------About Me--------*/

@@ -156,13 +156,6 @@ $(document).ready(function(){
               //--- Select Text Overlay on Card and Toggle Opacity----//
               this.querySelector('.textOverlay').classList.toggle('clicked');
 
-                //--- Toggle View & Hide Text----//
-              if (this.querySelector('h4').innerText === 'View') {
-                    this.querySelector('h4').innerText = 'Hide';
-              }
-              else {
-                  this.querySelector('h4').innerText = 'View';
-              }
           });
 
 });
