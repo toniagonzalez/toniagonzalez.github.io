@@ -517,13 +517,13 @@ img.slide {
   width: 200px;
   font-size: 1.5em;
   padding: 10px 15px;
+  border-radius: 5px;
   border: 5px double white;
   box-sizing: border-box;
   padding-top: 10px;
   color: white;
-  background-color: #0a0a29; /* dark blue */
-} 
-
+  background-color: #0a0a29; /*dark blue*/
+}
 
 /*------------About Me--------*/
 
