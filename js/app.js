@@ -34,39 +34,10 @@ let iconBarHide = function iconBarHide(){
 
 iconBarHide();
 
-//-- Read More / Read Less Variables-----//
-let codeSection = $('.projectSection')[0];
-let closeCode = $('.closeCode')[0];
-let readMeCode = $('.codeButton')[0];
-
-let codeShow = function codeShow() {
-  $(codeSection).show();
-}
-
-let codeHide = function codeHide() {
-  $(codeSection).hide();
-}
-
-
-//----Variables to Hide and Show Back Buttons
-
-let codePanelStart = function codePanelStart() {
-    return $(readMeCode).offset().top;
-}
-
-let codePanelEnd = function codePanelEnd() {
-    return $(closeCode).offset().top;
-}
-
-codeHide();
-
-
 
 //-------------Functions Triggered on Scroll------------//
 $(document).ready(function(){
   //-----Call Hide and Show Functions---//
-  codePanelStart();
-  codePanelEnd();
   home();
   contact();
   portfolio();
@@ -118,34 +89,6 @@ $(document).ready(function(){
 });
 
 
-
-// Read More/Read Less Button & closing section
-$(document).ready(function(){
-  //--Variables
-    let codeTop;
-
-            $(closeCode).on('click', function(e){
-                      if (e.target) {
-                         codeHide();
-                         $(window).scrollTop(codeTop);
-                      }
-                      $(readMeCode).text('View More');
-            });
-
-            $(readMeCode).on('click', function(e){
-                if ($(this).text() === 'View More') {
-                    codeTop = $(window).scrollTop();
-                    codeShow();
-                    $(this).text('View Less');
-                }
-                else {
-                      codeHide();
-                      $(window).scrollTop(codeTop);
-                      $(this).text('View More');
-                  }
-            });
-
-});
 
 //--- View Image Under info Card on View click----//
 $(document).ready(function(){

@@ -64,10 +64,7 @@ grid-template-areas:
   grid-area: header;
 }
 
-.portfolio {
-  grid-area: portfolio;
-  background: url(../images/bamboo.jpg);
-}
+
 
 .designProjects {
   grid-area: designProjects;
