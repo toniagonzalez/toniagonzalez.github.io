@@ -46,7 +46,6 @@ grid-template-areas:
   'header'
   'portfolio'
   'codeProjects'
-  'designProjects'
   'skills'
   'aboutMe'
   'footer';
@@ -65,12 +64,6 @@ grid-template-areas:
 }
 
 
-
-.designProjects {
-  grid-area: designProjects;
-  background-color: white;
-}
-
 .codeProjects {
   grid-area: codeProjects;
   background-color: white;
@@ -84,7 +77,6 @@ grid-template-areas:
 .aboutMe {
   grid-area: aboutMe;
   display: inline-block;
-  background: url(../images/bamboo.jpg);
 }
 
 footer {
@@ -269,10 +261,10 @@ header {
 
 
 /*------------Portfolio--------*/
+
 header,
 .portfolio,
 .aboutMe,
-.designProjects,
 .codeProjects,
 .skills {
     border: 2px solid rgba(0, 0, 0, 0.5);
@@ -309,32 +301,28 @@ header,
   color: white;
   background-color: rgba(0, 0, 0, .8);
 }
-/*------------designSkills & codeWork--------*/
+/*------------codeWork--------*/
 
-#designProjects.heading,
 #codeProjects.heading,
 h2.heading {
   color: rgba(0, 0, 0, .8);
 }
 
-.designProjects,
 .codeProjects,
-.skills {
+.skills,
+.aboutMe {
   display: inline-block;
   background-image: url(../images/marble.jpg);
   background-color: white;
   padding-bottom: 40px;
 }
 
-.designProjects {
-  padding-bottom: 90px;
-}
-
 /*-----Skill/Project Containers--------*/
-.designSkill,
 .project,
-.codeProjects .textOverlay,
-.designProjects .textOverlay {
+.codeProjects .textOverlay {
+  width: 300px;
+  height: 500px;
+
   margin: 40px 15px 65px 0px;
   position: relative;
   display: inline-block;
@@ -342,42 +330,8 @@ h2.heading {
   box-sizing: border-box;
 }
 
-.designProjects .background,
-.codeProjects .background {
-  margin:  25px;
-  position: relative;
-  overflow: hidden;
-}
-
-.designSkill,
-.designProjects .background,
-.designProjects  img.slide,
-.designProjects .imageContainer,
-.designProjects .textOverlay  {
-  width: 300px;
-  height: 400px;
-}
-
-.project,
-.codeProjects .background,
-.codeProjects .background img,
-.codeProjects .imageContainer,
-.codeProjects .textOverlay {
-  width: 300px;
-  height: 500px;
-}
-
-.designProjects .background .imageContainer,
-.designProjects .background .imageContainer .textOverlay,
-.codeProjects .background  .imageContainer .textOverlay,
-.codeProjects .background .imageContainer {
-  margin-top: 0;
-}
-
 /*-----Card textOverlay Text--------*/
-.designProjects .textOverlay,
-.codeProjects .textOverlay,
-img.slide {
+.codeProjects .textOverlay {
   margin: 30px 15px;
   opacity: 1;
   transition: transform .9s ease-out;
@@ -393,39 +347,12 @@ img.slide {
   line-height: 1.5em;
   margin: 1.5em 0;
   text-align: center;
-  border-radius: 5px 5px 5px 90px;
+  border-radius: 5px;
   border: .5px solid #0a0a29; /* dark blue */
   padding: 10px 15px;
   background-color: white;
 }
 
-
-img.slide {
-  margin-top: 0;
-  padding: 0;
-  background-color: white;
-}
-
-.textOverlay.clicked {
-  opacity: 0;
-}
-
-.designProjects .background,
-.codeProjects .background {
-  margin: 0;
-  border-radius: 5px;
-  background-color: #cc6600; /* drk orange */
-}
-
-
-.textOverlay img.icon {
-  width: 90%;
-  height: auto;
-  border: none;
-}
-
-
-.designProjects .skillHeader,
 .codeProjects .skillHeader {
   font-size: 1.2em;
   width: 90%;
@@ -437,59 +364,18 @@ img.slide {
 
 }
 
-/*----View Card Text--------*/
-
-.designProjects .background h4,
-.codeProjects .background h4 {
-  margin: 0;
-  color: white;
-  font-size: 25px;
-  position: absolute;
-  bottom: 4px;
-  left: 5px;
-  transform: rotate(-44deg);
-}
 
 /*-----Projects/ Skills Link Styling--------*/
 
 
-.codeProjects a,
-.designProjects a {
+.codeProjects a {
   display: inline-block;
-  color:  #0a0a29; /* dark blue */
-  font-size: 1.2em;
-  height: 1.4em;
-  border-style: none;
-  border-radius: 5px;
-  background-color: white;
-  border: .5px solid #0a0a29; /* dark blue */
-  margin-top: 10px;
-  padding: 6px 10px;
+  color:  #cc6600; /* dark orange */
 }
-.codeProjects a:hover,
-.designProjects a:hover{
-  color:  white;
-  background-color:  #cc6600; /* drk orange */
-  border-color:  #cc6600; /* drk orange */
+
+.codeProjects a:hover {
+  color: #80d4ff; /* light blue */
   cursor: pointer;
-}
-
-
-.codeButton,
-.closeCode {
-  color: #0a0a29; /* dark blue */
-  display: block;
-  margin: 0 auto;
-  font-size: 1.2em;
-  padding: 8px 10px;
-  margin-top: 100px;
-  border-radius: 5px;
-  border: none
-}
-.codeButton:hover,
-.closeCode:hover {
-  color: white;
-  background-color: #0a0a29; /* dark blue */
 }
 
 
@@ -503,7 +389,7 @@ img.slide {
   display: inline-flex;
   flex-wrap: wrap;
   justify-content: center;
-  list-style: none;
+  list-style-type: none;
   margin: 20px;
   padding: 0;
 }
@@ -589,7 +475,7 @@ img.slide {
   width: 80%;
   margin-left: 5%;
   color: black;
-  background-image: url(../images/marble.jpg);
+  background: linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 255, .5)), url(../images/bamboo.jpg);
   box-shadow: 5px 5px 5px rgba(0, 0, 0, .8);
 }
 
@@ -599,7 +485,7 @@ img.slide {
 }
 
 .card.contact {
-    color: gray;
+    color: #000;
 }
 
 .card.contact a {
@@ -806,6 +692,4 @@ a.social:hover {
     "heading heading heading"
     "about polaroid contact"
   }
-
-
 }
